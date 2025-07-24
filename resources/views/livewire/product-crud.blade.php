@@ -236,6 +236,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Product List</div>
+                    <div class="d-flex justify-content-end">
+                        <livewire:auth.logout />
+                    </div>
                     <div class="card-body">
                         <button class="btn btn-success btn-sm my-2" wire:click="showCreateForm">
                             <i class="bi bi-plus-circle"></i> Add New Product

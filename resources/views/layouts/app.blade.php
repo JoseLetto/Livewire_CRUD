@@ -12,6 +12,26 @@
 <body>
     <div class="container">
         <h3 class="mt-3">Laravel Livewire CRUD Application</h3>
+
+        @auth
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary" type="button">
+                        <i class="bi bi-person-circle"></i> {{ Auth::user()->name ?? Auth::user()->email }}
+                    </button>
+                </div>
+            @else
+                
+            @endauth
+        </div>
+
+        {{-- Success Message --}}
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
+
         @yield('content')
         <div class="row justify-content-center text-center mt-3">
             <div class="col-md-12">
